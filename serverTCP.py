@@ -73,6 +73,7 @@ def downloading(conn,addr):
     while True:
         content = f.read(1024)
         conn.send(content)
+        print(content)
         if not content:
             conn.send(b'3nd?tr4ns')
             break

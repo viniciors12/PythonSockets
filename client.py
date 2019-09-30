@@ -23,7 +23,7 @@ def downloadTCP(file):
             s.send(b'done')
             break
         f.write(data)
-        print("El archivo se ha recibido correctamente.")
+    print("El archivo se ha recibido correctamente.")
     f.close()
 
 
@@ -99,7 +99,7 @@ def udpClient():
 def uploadUDP(file):
 
     while True:
-        f = open("..\\redesHW\\downloaded\\" + file, "rb")
+        f = open("./downloaded/" + file, "rb")
         content = f.read(1024)
         while content:
             s.sendto(content,(host,port))
@@ -111,7 +111,7 @@ def uploadUDP(file):
         break
 
 def downloadUDP(file):
-    f = open("..\\redesHW\\uploaded\\" + file, "wb")
+    f = open("./uploaded/" + file, "wb")
     while True:
         try:
             input_data = s.recvfrom(1024)
